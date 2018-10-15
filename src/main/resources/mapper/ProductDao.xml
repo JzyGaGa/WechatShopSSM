@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.imooc.o2o.dao.ProductDao">
+	<!-- mybatis 配置文件 useGeneratedKeys 参数只针对 insert 语句生效，
+	默认为 false。当设置为 true 时，表示如果插入的表以自增列为主键，
+	则允许 JDBC 支持自动生成主键，并可将自动生成的主键返回。keyProperty将主键注入
+	productId中 -->
+	<insert id="insertProduct"
+		parameterType="com.imooc.o2o.entity.Product" useGeneratedKeys="true"
+		keyProperty="productId" keyColumn="product_id">
+		INSERT INTO
+		tb_product
+		(product_name,product_desc,img_addr,normal_price,promotion_price
+		,priority,create_time,last_edit_time,product_category_id,shop_id)
+		VALUES 
+		(#{productName},#{productDesc},#{imgAddr},#{normalPrice},#{promotionPrice}
+		,#{priority},#{createTime},#{lastEditTime}
+		,#{productCategory.productCategoryId},#{shop.shopId})
+	</insert>
+
+
+
+</mapper>

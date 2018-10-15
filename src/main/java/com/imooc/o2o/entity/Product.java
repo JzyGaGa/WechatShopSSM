@@ -15,12 +15,18 @@ public class Product {
 	private Date createTime;
 	private Date lastEditTime;
 	// 0下架1.在前端系统展示
-	
+	private Integer enableStatus;
 	private List<ProductImg> productImgList;
 	private ProductCategory productCategory;
 	private Shop shop;
 	public Long getProductId() {
 		return productId;
+	}
+	public Integer getEnableStatus() {
+		return enableStatus;
+	}
+	public void setEnableStatus(Integer enableStatus) {
+		this.enableStatus = enableStatus;
 	}
 	public void setProductId(Long productId) {
 		this.productId = productId;

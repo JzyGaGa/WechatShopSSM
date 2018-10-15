@@ -15,6 +15,19 @@ public class Shop {
 	private Integer priority;
 	private Date createTime;
 	private Date lastEditTime;
+	//-1,0审核，1可用
+	private Integer enableStatus;
+	//超级管理员与店家提醒
+	private String advice;
+	private Area area;
+	private PersonInfo owner;
+	private ShopCategory shopCategory;
+	public Long getShopId() {
+		return shopId;
+	}
+	public void setShopId(Long shopId) {
+		this.shopId = shopId;
+	}
 	public Long getOwnerId() {
 		return ownerId;
 	}
@@ -32,17 +45,6 @@ public class Shop {
 	}
 	public void setCategoryId(Long categoryId) {
 		this.categoryId = categoryId;
-	}
-	//-1.不可用0.审核中1.可用
-	private String advice;
-	private Area area;
-	private PersonInfo owner;
-	private ShopCategory shopCategory;
-	public Long getShopId() {
-		return shopId;
-	}
-	public void setShopId(Long shopId) {
-		this.shopId = shopId;
 	}
 	public String getShopName() {
 		return shopName;
@@ -92,6 +94,12 @@ public class Shop {
 	public void setLastEditTime(Date lastEditTime) {
 		this.lastEditTime = lastEditTime;
 	}
+	public Integer getEnableStatus() {
+		return enableStatus;
+	}
+	public void setEnableStatus(Integer enableStatus) {
+		this.enableStatus = enableStatus;
+	}
 	public String getAdvice() {
 		return advice;
 	}
@@ -118,5 +126,13 @@ public class Shop {
 	}
 	
 	
+	@Override
+	public String toString() {
+		return "Shop [shopId=" + shopId + ", ownerId=" + ownerId + ", areaId=" + areaId + ", categoryId=" + categoryId
+				+ ", shopName=" + shopName + ", shopDesc=" + shopDesc + ", shopAddr=" + shopAddr + ", phone=" + phone
+				+ ", shopImg=" + shopImg + ", priority=" + priority + ", createTime=" + createTime + ", lastEditTime="
+				+ lastEditTime + ", enableStatus=" + enableStatus + ", advice=" + advice + ", area=" + area + ", owner="
+				+ owner + ", shopCategory=" + shopCategory + "]";
+	}
 	
 }

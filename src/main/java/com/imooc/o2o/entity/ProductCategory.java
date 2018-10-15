@@ -1,7 +1,11 @@
 package com.imooc.o2o.entity;
 
 import java.util.Date;
-
+/**
+ * 商品类别的管理
+ * @author 59842
+ *
+ */
 public class ProductCategory {
 	private Long productCategoryId;
 	private Long shopId;
